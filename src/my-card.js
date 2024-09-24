@@ -14,67 +14,65 @@ export class MyCard extends LitElement {
 
   constructor() {
     super();
-    super();
-    this.title = "Psu Wins!";
-    this.image = "https://www.ydr.com/gcdn/-mm-/c3c1e22b1a53652a77fcb5bf66b6bffc54d34bc1/c=0-121-2400-1477/local/-/media/2016/11/26/PAGroup/Chambersburg/636157873314238494-CPO-NHG-112616-PENN-STATE-FOOTBALL-VS-MICHIGAN-12.jpg?width=660&height=373&fit=crop&format=pjpg&auto=webp";
-    this.description = "This is a picture of the Penn State football team when they won the national championship in 2016. This was one of the best teams the school ever had and remains that way to this day. The team hasn't been as good since.";
+    this.title = 'My card';
+    this.link = '#';
+    this.image = null;
+    this.description = 'text';
   }
 
   static get styles() {
     return css`
       :host {
-        display: block;
+        display: inline-block;
       }
-      .card {
-        font-size: 1em;
-        display: inline-flex;
-        border: 2px solid grey;
-        padding: 8px;
-        margin: 8px;
-        background-color: green;
-        transition: .6s all ease-in-out;
-      }
-      .card-image {
-        width: 300px;
-        height: 100%;
-      }
-      .card-text {
-        width: 300px;
-        padding: 0 8px 8px 8px;
-        color: black;
-        background-color: white;
-        margin: 0 0 0 8px;
-        height: 300px;
-        overflow: auto;
-      }
-      .card-title {
-        position: sticky;
-        top: 0;
-        background-color: gray;
+
+      div {
+        padding: 10px;
+        width: 230px;
+        border-radius: 8px;
         text-align: center;
-        font-size: 2em;
-        padding: 8px 8px 16px;
-        margin: 0 -8px;
+        background-color: lightgray;
+        border: 1px solid;
+      }
+
+      img {
+        margin: auto;
+        display: flex;
+        height: 150px;
+        width: 200px;
+      }
+
+      button {
+        margin: auto;
+        display: flex;
+        background-color: navy;
+      }
+
+      a:hover {
+        color: darkgray;
+      }
+
+      a {
+        color: white;
       }
     `;
   }
 
   render() {
     return html`
-      <div class="card">
-        <img class="card-image" alt="Card Image" src="${this.image}" />
-        <div class="card-text">
-          <h2 class="card-title">${this.title}</h2>
-          <p>${this.description}</p>
-        </div>
-      </div>
-    `;
+    <div>
+      <h1>${this.title}</h1>
+      <img src=${this.image}>
+      <p>${this.description}</p>
+      <button><a href=${this.link}>Details</a></button>
+    </div>`;
   }
 
   static get properties() {
     return {
       title: { type: String },
       image: { type: String },
+      link: {type: String},
       description: { type: String },
     };
   }
