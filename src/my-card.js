@@ -18,6 +18,7 @@ export class MyCard extends LitElement {
     this.link = '#';
     this.image = null;
     this.description = 'text';
+    this.fancy = false;
   }
 
   static get styles() {
@@ -25,7 +26,12 @@ export class MyCard extends LitElement {
       :host {
         display: inline-block;
       }
-
+      :host([fancy]) {
+      display: block;
+        background-color: pink;
+        border: 2px solid fuchsia;
+        box-shadow: 10px 5px 5px red;
+      }
       div {
         padding: 10px;
         width: 230px;
@@ -74,6 +80,7 @@ export class MyCard extends LitElement {
       image: { type: String },
       link: {type: String},
       description: { type: String },
+      fancy: {type: Boolean, reflect: true}
     };
   }
 }
