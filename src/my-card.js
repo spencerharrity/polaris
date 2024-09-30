@@ -18,6 +18,7 @@ export class MyCard extends LitElement {
     this.link = '#';
     this.image = null;
     this.description = 'text';
+    this.button = '';
     this.fancy = false;
   }
 
@@ -103,7 +104,7 @@ export class MyCard extends LitElement {
           <slot><p>${this.description}</p></slot>
         </div>
       </details>
-      <button><a href="${this.link}" target="_blank">${this.buttonDesc}</a></button>
+      <button><a href="${this.link}" target="">${this.buttonDesc}</a></button>
     </div>`;
   }
 
@@ -113,6 +114,7 @@ export class MyCard extends LitElement {
       image: { type: String },
       link: {type: String},
       description: { type: String },
+      button: { type: String },
       fancy: {type: Boolean, reflect: true}
     };
   }
